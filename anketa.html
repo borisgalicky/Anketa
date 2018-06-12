@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+    </head>
+<body>
+<div id="main">
+    <h1>Football survey</h1>
+    <b>Which english football club do you like?</b><br><br>
+<form method="get" action="anketa.php">
+    <input type="radio" name="club" value="man"><img src="http://pngimg.com/uploads/manchester_united/manchester_united_PNG22.png" width="13px" height="13px"> <label>Manchester United</label><br>
+    <input type="radio" name="club" value="che"><img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4e1.png" width="13px" height="13px"> <label>Chelsea</label><br>
+    <input type="radio" name="club" value="liv"><img src="https://i.pinimg.com/originals/da/de/cf/dadecf2eb40502838cf7f789aab5a828.png" width="13px" height="13px"> <label>Liverpool</label><br>
+    <input type="radio" name="club" value="ars"><img src="https://cdn.freebiesupply.com/logos/large/2x/arsenal-6-logo-png-transparent.png" width="13px" height="13px"> <label>Arsenal</label><br>
+    <input type="radio" name="club" value="mci"><img src="https://s3.amazonaws.com/freebiesupply/large/2x/manchester-city-logo-png-transparent.png" width="13px" height="13px"> <label>Manchester City</label><br>
+    <input type="radio" name="club" value="tot"><img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4ee.png" width="13px" height="13px"> <label>Tottenham Hotspour</label><br><br>
+    <input type="checkbox" name="terms"> <label>I agree with terms and conditions</label><br><br>
+    <button id="send_btn" name="send_button" onclick="checkData()">Send</button> <button type="reset" id="res_btn" name="reset_button">Reset</button>
+</form>
+</div>
+</body>
+<style>
+    #send_btn,#res_btn{
+        width: 85px;
+        height: 25px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    #main{
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 30%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+    }
+</style>
+</html>
