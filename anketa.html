@@ -4,37 +4,54 @@
     <meta charset="UTF-8">
     <title>Survey</title>
     </head>
-<body>
-<div id="main">
-    <h1>Football survey</h1>
-    <b>Which english football club do you like?</b><br><br>
-<form method="get" action="anketa.php">
+<body style="font-family: Arial, Helvetica, sans-serif;">
+<form id="main" method="get" action="anketa.php">
+    <h1 id="header">Football survey</h1>
+    <label id="question"><b>Which english football club do you like?</b></label><br><br>
+
     <input type="radio" name="club" value="man"><img src="http://pngimg.com/uploads/manchester_united/manchester_united_PNG22.png" width="13px" height="13px"> <label>Manchester United</label><br>
     <input type="radio" name="club" value="che"><img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4e1.png" width="13px" height="13px"> <label>Chelsea</label><br>
     <input type="radio" name="club" value="liv"><img src="https://i.pinimg.com/originals/da/de/cf/dadecf2eb40502838cf7f789aab5a828.png" width="13px" height="13px"> <label>Liverpool</label><br>
     <input type="radio" name="club" value="ars"><img src="https://cdn.freebiesupply.com/logos/large/2x/arsenal-6-logo-png-transparent.png" width="13px" height="13px"> <label>Arsenal</label><br>
     <input type="radio" name="club" value="mci"><img src="https://s3.amazonaws.com/freebiesupply/large/2x/manchester-city-logo-png-transparent.png" width="13px" height="13px"> <label>Manchester City</label><br>
-    <input type="radio" name="club" value="tot"><img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4ee.png" width="13px" height="13px"> <label>Tottenham Hotspour</label><br><br>
-    <input type="checkbox" name="terms"> <label>I agree with terms and conditions</label><br><br>
-    <button id="send_btn" name="send_button" onclick="checkData()"><b>Send</b></button> <button type="reset" id="res_btn" name="reset_button">Reset</button>
+    <input type="radio" name="club" value="tot"><img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4ee.png" width="13px" height="13px"> <label>Tottenham Hotspur</label><br><br>
+    <input type="checkbox" name="terms"> <label><b>I agree</b> with terms and conditions</label><br><br>
+    <button id="send_btn" name="send_button"><b>Send</b></button> <button type="reset" id="res_btn" name="reset_button">Reset</button>
 </form>
-</div>
 </body>
-<!--<style>
+<style>
+    body{
+        background-image: url("http://www.kinyu-z.net/data/wallpapers/224/1488378.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+    }
     #send_btn,#res_btn{
-        width: 85px;
-        height: 25px;
+        width: 153px;
+        height: 30px;
         font-size: 15px;
         font-weight: bold;
     }
     #main{
+        border-color: black;
+        border-radius: 15px;
+        background-color: #d8e7ff;
         position: absolute;
-        width: 300px;
-        height: 200px;
+        width: 350px;
+        height: 350px;
         z-index: 15;
         top: 30%;
         left: 50%;
         margin: -100px 0 0 -150px;
     }
-</style>-->
+    input,#send_btn{
+        margin-left:20px;
+    }
+    #header{
+        margin-left: 55px;
+    }
+    #question{
+        float: center;
+        margin-left: 25px;
+    }
+</style>
 </html>
