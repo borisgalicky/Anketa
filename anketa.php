@@ -7,6 +7,7 @@
 <body style="font-family: Arial, Helvetica, sans-serif;background-image">
 <div id="main">
 <?php
+error_reporting(0);
 $servername = "localhost:3306";
 $username = "root";
 $password = "";
@@ -36,7 +37,7 @@ if($answer == "man" || $answer == "che" || $answer == "liv" || $answer == "ars" 
             if($conn->query($man_vote) === TRUE){
                 echo "<br><div style='text-align:left;'><label class='succes_vote'><b>You have successfully voted for ".$man_name."!</b></label></div><br>";
             }else{
-                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";
+                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";return;
             }
         }if($_GET['club']=='che'){
             while($row=$see_results->fetch_assoc()){
@@ -52,7 +53,7 @@ if($answer == "man" || $answer == "che" || $answer == "liv" || $answer == "ars" 
             if($conn->query($che_vote) === TRUE){
                 echo "<br><div style='text-align:left;'><label class='succes_vote'><b>You have successfully voted for ".$che_name."!</b></label></div><br>";
             }else{
-                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";
+                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";return;
             }
         }if($_GET['club']=='liv'){
             while($row=$see_results->fetch_assoc()){
@@ -68,7 +69,7 @@ if($answer == "man" || $answer == "che" || $answer == "liv" || $answer == "ars" 
             if($conn->query($liv_vote) === TRUE){
                 echo "<br><div style='text-align:left;'><label class='succes_vote'><b>You have successfully voted for ".$liv_name."!</b></label></div><br>";
             }else{
-                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";
+                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";return;
             }
         }if($_GET['club']=='ars'){
             while($row=$see_results->fetch_assoc()){
@@ -84,7 +85,7 @@ if($answer == "man" || $answer == "che" || $answer == "liv" || $answer == "ars" 
             if($conn->query($ars_vote) === TRUE){
                 echo "<br><div style='text-align:left;'><label class='succes_vote'><b>You have successfully voted for ".$ars_name."!</b></label></div><br>";
             }else{
-                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";
+                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";return;
             }
         }if($_GET['club']=='mci'){
             while($row=$see_results->fetch_assoc()){
@@ -100,7 +101,7 @@ if($answer == "man" || $answer == "che" || $answer == "liv" || $answer == "ars" 
             if($conn->query($mci_vote) === TRUE){
                 echo "<br><div style='text-align:left;'><label class='succes_vote'><b>You have successfully voted for ".$mci_name."!</b></label></div><br>";
             }else{
-                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";
+                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";return;
             }
         }if($_GET['club']=='tot'){
             while($row=$see_results->fetch_assoc()){
@@ -116,7 +117,7 @@ if($answer == "man" || $answer == "che" || $answer == "liv" || $answer == "ars" 
             if($conn->query($tot_vote) === TRUE){
                 echo "<br><div style='text-align:left;'><label class='succes_vote'><b>You have successfully voted for ".$tot_name."!</b></label></div><br>";
             }else{
-                echo "<label>There was some problem with vote!</label><br><br>";
+                echo "<label>There was some problem with vote!</label><br><a href='anketa.html'><br>Back to previous page</a>";return;
             }
         }
         //získava celkový počet hlasov od všetkých tímov
@@ -191,12 +192,12 @@ if($answer == "man" || $answer == "che" || $answer == "liv" || $answer == "ars" 
         
     }
     else{
-        echo "<div id='error'><br>You must agree with terms and conditions!</div><br>
+        echo "<div><br>You must agree with terms and conditions!</div><br>
         <a href='anketa.html'><label style='color:black; cursor:pointer; margin-left:20px;'><b>Back to previous page</b></label></a>";
     }
 }
 else{
-    echo "<div id='error'><label style='color:black; cursor:pointer;'>You have to choose one option!<br></label><a href='anketa.html'><br><label style='color:black; cursor:pointer;'><b>Back to previous page</b></label></a></div>";
+    echo "<div><br><label style='color:black; cursor:pointer; '>You have to choose one option!<br></label><a href='anketa.html'><br><label style='color:black; cursor:pointer;'><b>Back to previous page</b></label></a></div>";
 }       
 ?>
 </div>
@@ -207,7 +208,7 @@ else{
         background-size: cover;
         background-attachment: fixed;
     }
-    #main{
+    #main,.main{
         margin-right: 20px;
         border-color: black;
         border-radius: 15px;
@@ -218,7 +219,7 @@ else{
         z-index: 15;
         top: 30%;
         left: 50%;
-        margin: -100px 0 0 -150px;
+        margin: -100px 0 0 -160px;
     }
     img,div{
         margin-left:20px;
